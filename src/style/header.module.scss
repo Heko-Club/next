@@ -1,0 +1,291 @@
+@import './variables';
+
+$header-height: 10rem;
+$navbar-width: 10rem;
+$color-primary: $bg;
+$color-secondary: $bg;
+$color-mobile: $bg;
+
+.headerContainer * {
+  font-family: 'Asgard Fit', 'arial';
+}
+
+.headerContainer {
+  // Mobile first approach
+  color: #000;
+
+  .desktopHeader {
+    display: none;
+  }
+
+  .mobileNavbar {
+    display: flex;
+    width: 100%;
+    height: $header-height;
+    position: fixed;
+    bottom: 0;
+    background-color: $color-mobile;
+  }
+}
+
+// Media query for desktop views
+@media (min-width: 48rem) {
+
+  // Using 48rem (768px) as breakpoint
+  .headerContainer .desktopHeader {
+    display: flex;
+  }
+
+  .headerContainer .desktopHeader .leftNavbar {
+    width: $navbar-width;
+    height: 100%;
+    background-color: $color-primary;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 99;
+    
+
+    * {
+      font-family: 'Comic sans ms';
+    }
+
+    .spacer 
+    {
+      flex-grow: 0.95;
+    }
+
+    .logoBlock {
+      margin-bottom: 50px; // Space between logo block and next block
+     
+      .logoText {
+        
+        font-size: 34px;
+        color: white;
+        font-weight: bold;
+      }
+    }
+
+    .iconBlock {
+      display: flex;
+      gap: 15px; // Space between icons
+      margin-bottom: 20px; // Space between icon block and next block
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+
+      .homeIcon,
+      .messageIcon {
+        width: 50px;
+        height: 50px;
+         // If you want rounded corners
+        cursor: pointer;
+        fill: $gray;
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+
+        svg {
+          width: 28px;
+          height: 28px;
+          fill: $gray;
+          
+        }
+      }
+      .homeIcon.selected, .messageIcon.selected, .homeIcon:hover, .messageIcon:hover
+      {
+        border-radius: 50%;
+        background-color: #fff;
+        svg 
+        {
+          fill: $color-primary;
+        }
+      }
+
+
+    }
+
+    .notificationBlock {
+      
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .notificationIcon {
+        width: 31px;
+        height: 31px;
+       
+        border-radius: 4px;
+        cursor: pointer;
+        margin-bottom: 30px; // Space between notification icon and profile block
+
+
+        svg {
+          width: 100%;
+          height: 100%;
+          fill: white;
+        }
+      }
+
+      .profileBlock {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .profileImage {
+          width: 42px;
+          height: 42px;
+          border-radius: 50%; // To make it circular
+          margin-bottom: 10px; // Space between image and wallet address
+        }
+
+        .walletAddress {
+          font-size: 14px;
+          color: $gray; // Placeholder color
+          
+        }
+      }
+    }
+  }
+
+  .headerContainer .desktopHeader .topNavbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-left: $navbar-width;
+    padding-left: 2rem;
+    width: 100%;
+    background-color: $bg;
+    height: $navbar-width - 2.3rem;
+    
+    .leftTopNavbar {
+      display: flex;
+      gap: 10px;
+  
+      .searchBar {
+        padding: 5px 15px;
+        padding-right:7rem;
+        border-radius: 20px;
+        outline: none;
+        background-color: $second-bg;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        input 
+        {
+          outline: none;
+          background-color: $second-bg;
+          list-style: none;
+        }
+
+        svg {
+          width: 31px;
+          height: 31px;
+          margin-right:1rem;
+        }
+      }
+  
+      .plusButton {
+        background-color: white;
+        color: $bg;
+        border: none;
+        border-radius: 20px;
+        padding: 5px 13px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 1rem;
+        margin-right: 1.6rem;
+
+        div:first-child {
+          border-radius: 50%;
+          background-color: $second-gray;
+          width: 20px;
+          height: 20px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: white;
+          font-size: 15px;
+
+        }
+        div:nth-child(2) {
+          margin-left: 12px;
+          font-weight:700;
+        }
+      }
+    }
+  
+    .rightTopNavbar {
+      display: flex;
+      align-items: space-around;
+      gap: 10px;
+      background-color: $second-bg;
+      border-radius: 20px;
+      overflow: hidden;
+      width: 12rem;
+      position: relative;
+      height:2.5rem;
+  
+      .switchButton {
+        
+        color: $bg;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        width: 6rem;
+       z-index: 2;
+  
+      }
+      
+  
+      .switchActive {
+       
+        color: #fff;
+        border: none;
+        padding: 5px 15px;
+        border-radius: 20px;
+        cursor: pointer;
+        width: 6rem;
+        z-index: 99;
+        
+      }
+    }
+
+    .rightTopNavbar::before {
+      content: '';  /* This is needed for the pseudo-element to be generated */
+      position: absolute; /* Absolute positioning relative to the button */
+      top: 0; /* Align to the top of the button */
+      left: 0; /* Align to the left of the button */
+      height: 100%; /* Full height of the button */
+      width: 50%; /* Half width of the button */
+      background-color: white; /* Full background white */
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
+      transition: left 0.2s ease;
+      
+
+  }
+  .rightTopNavbar.switchOnRight::before {
+    left: auto;
+    right: 0;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    left: 50%; // Move it half of the navbar's width.
+
+}
+  }
+
+  .headerContainer .mobileNavbar {
+    display: none;
+  }
+}
