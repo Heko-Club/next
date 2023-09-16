@@ -1,14 +1,267 @@
 .connexion 
 {
-	height: 100vh;
+	height: 100vh !important;
 	width: 100%;
-	position: absolute;
+	position: absolute !important;
 	top: 0;
 	left: 0;
-	background-color: rgba(0, 0, 0, 0.8);
+	background-color: rgba(0, 0, 0, 0.4);
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	z-index: 100;
-
+	z-index: 1000;
+	background-color: #952121;
 } 
+
+
+
+.container {
+	width: auto;
+	height: auto;
+	background-color: #000;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	color: #ddd;
+}
+
+.container * {
+	font-family: 'GSM', sans-serif;
+	font-size: 2.2rem;
+    font-weight: 300 !important;
+    line-height: 1.167;
+    text-transform: uppercase;
+    color: #fff;
+}
+.container>* {
+	flex-grow: 1;
+	width: 50%;
+}
+
+.connexion {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.logo 
+{
+	margin-top: 3rem;
+	margin-bottom: 1rem;
+}
+.logo img{	
+	transform: scale(0.3);
+
+}
+.signInSignUp * 
+{
+	font-size: 0.8rem;
+}
+.signInSignUp {
+	background-color: black;
+	width: 100%;
+	max-width: 400px;
+	margin: 0 auto;
+	padding: 20px;
+	
+
+	form {
+		margin-top: 40px;
+		display: flex;
+		flex-direction: column;
+
+		label {
+			display: flex;
+			flex-direction: column;
+			margin-bottom: 15px;
+			font-size: 0.8rem;
+
+			input,
+			select {
+				margin-top: 7px;
+				padding: 14px;
+				font-size: 0.7rem;
+				border: 1px solid rgb(184, 184, 184);
+				border-radius: 0;
+				outline: none;
+				background-color: #000 !important;
+				color: #ddd;
+				padding-right: 3px !important;
+
+				&:focus {
+					border-color: #ffffff;
+				}
+			}
+
+			input[type='checkbox'] {
+				width: auto;
+				margin: 10px 0 0;
+				
+
+				&:checked {
+					background: #ffffff;
+				}
+			}
+		}
+
+		button[type='submit'] {
+			margin-top: 14px;
+			padding: 14px;
+			border: none;
+			border-radius: 0;
+			background-color: #fff;
+			color: #000;
+			font-weight: 500 !important;
+			cursor: pointer;
+
+			&:hover {
+				background-color: #d2cfcf;
+			}
+
+			&:active {
+				background-color: #ababab;
+			}
+		}
+	}
+
+	.toggleButton {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 20px;
+		color: #ddd;
+		cursor: pointer;
+
+		&:hover {
+			color: #a9a9a9;
+		}
+
+		&.loginActive {
+			&::before {
+				content: "S'inscire";
+				opacity: 0.5;
+			}
+
+			&::after {
+				content: "Se connecter";
+				margin-left: 10px;
+			}
+		}
+
+		&.registerActive {
+			&::before {
+				content: "S'inscire";
+
+			}
+
+			&::after {
+				content: "Se connecter";
+				margin-left: 10px;
+				opacity: 0.5;
+			}
+		}
+	}
+}
+
+.background {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-end;
+
+	video {
+		width: 80%;
+		object-fit: cover;
+		margin-top:8rem;
+		margin-bottom: 30px;
+		border: #fff 0.1rem solid;
+		border-radius: 1.5rem;
+	}
+
+	h1 {
+		
+		position: absolute;
+		top: 3%;
+		color: #ddd;
+		text-align: center;
+		font-size: 1.3rem;
+	
+	}
+
+
+	h1 span {
+		color: #952121;
+		// surlignement en blanc (un peu petit peu
+		padding: 0rem 0.5rem;
+		font-size: 1.5rem;
+		border-radius: 0.2rem;
+		
+
+	}
+
+	h1.secondh1 {
+		top: 8%;
+		overflow:hidden;
+	}
+
+}
+
+.forgot {
+	font-style: italic;
+	color: #ddd;
+
+	&:hover {
+		color: #aaa;
+	}
+}
+
+
+
+/* Media Query for Desktop */
+@media screen and (min-width: 992px) {
+	.container {
+		flex-direction: row;
+		height: 100vh;
+	}
+	.background {
+		border-left: 0.005rem solid #777;
+		justify-content: center;
+		video {
+			margin-top:1rem;
+			width: 90%;
+		}
+		h1
+		{
+			top: 8%;
+			font-size: 1.5rem;
+		}
+		h1.secondh1 {
+			top: 14%;
+		}
+	}
+
+
+
+.logo {
+	margin-top: 3rem;
+	margin-bottom: 1rem;
+	transform: scale(1);
+
+}
+
+.logo img{	
+	transform: scale(0.5);
+
+}
+
+
+}
