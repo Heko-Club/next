@@ -19,6 +19,21 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "sass": "^1.66.1",
-    "tailwindcss": "3.3.3"
+    "tailwindcss": "3.3.3",
+    "@next/font": "13.0.7",
+    "@thirdweb-dev/react": "^3.6.9-nightly-5862c55",
+    "@thirdweb-dev/sdk": "^3.6.9-nightly-5862c55",
+    "@thirdweb-dev/storage": "^1.0.6",
+    "ethers": "^5.7.2",
+    "graphql": "^16.6.0",
+    "omit-deep": "^0.3.0",
+    "uuidv4": "^6.2.13"
+
+  },
+
+  "devDependencies": {
+    "@graphql-codegen/cli": "^2.16.1",
+    "@graphql-codegen/fragment-matcher": "^3.3.3",
+    "@types/omit-deep": "^0.3.0"
   }
 }

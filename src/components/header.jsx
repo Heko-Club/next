@@ -3,6 +3,7 @@ import styles from "@/style/header.module.scss";
 import Image from "next/image";
 import pp from "@/../assets/examples/moi.png";
 import React, { useState } from "react";
+import SignInButton from "./SignInButton";
 
 const Header = () => {
   const [isNSFW, setIsNSFW] = useState(false); // Default is SFW
@@ -159,6 +160,7 @@ const Header = () => {
                 Become Creator
               </div>
             </button>
+            <SignInButton/>
           </div>
         </nav>
       </div>

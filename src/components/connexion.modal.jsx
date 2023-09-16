@@ -4,6 +4,7 @@ import { login, register } from "@/services/auth.service";
 import { isValidPassword } from "@/utils/password.util";
 import { AuthContext } from "@/context/AuthContext";
 import styles from "@/style/connexion.modal.module.scss";
+import SignInButton from "./SignInButton";
 
 const Connexion = () => {
   const [isNSFW, setIsNSFW] = useState(false); // Default is SFW
@@ -127,6 +128,7 @@ const Connexion = () => {
                   placeholder="Écrivez votre mot de passe"
                 />
               </label>
+              <SignInButton/>
               {isLogin && (
                 <a href="/forgottenpassword" className={styles.forgot}>
                   Mot de passe oubliée?
