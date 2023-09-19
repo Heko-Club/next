@@ -19,7 +19,7 @@ export const login = async (email, password) => {
 
 export const register = async (user, password) => {
   try {
-    const response = await api.post('/sign/up', { // replace '/register' with the actual register API endpoint
+    const response = await api.post('/auth/register_user', { // replace '/register' with the actual register API endpoint
       user,
       password
     });
